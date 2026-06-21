@@ -6,8 +6,15 @@ import { FaWhatsapp } from "react-icons/fa"
 import { IoCallOutline } from "react-icons/io5"
 import { MdOutlineEmail } from "react-icons/md"
 import "./footer.css"
+import { openWhatsApp } from "../Util/whatsAppHelper"
 
 function Footer() {
+        const consultationMessage =
+`Hello SHUBH VAASTU CONSTRUCTIONS, I would like to book a consultation.
+
+Name:
+Project Type:
+Location:`;
     return (
         <>
             <footer data-aos="fade-up">
@@ -59,7 +66,13 @@ function Footer() {
                     <a href="">
                         <FaFacebookSquare /> Facebook
                     </a>
-                    <a href="">
+                    <a href="#"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        openWhatsApp(
+                            consultationMessage
+                        )
+                    }}>
                         <FaWhatsapp /> WhatsApp
                     </a>
                 </div>

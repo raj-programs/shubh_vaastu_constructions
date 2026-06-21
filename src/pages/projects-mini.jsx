@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { FaArrowRight } from "react-icons/fa"
 import "./projects.css"
-import { urlFor } from "../imgHelper/imgURL"
+import { urlFor } from "../Util/imgURL"
 import { useEffect, useState } from "react"
 import { client } from "../sanity-setup/sanity"
 import AOS from "aos"

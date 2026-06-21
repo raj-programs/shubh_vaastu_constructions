@@ -4,6 +4,8 @@ import { IoMdClose } from "react-icons/io"
 import "react-phone-number-input/style.css"
 import "./contactForm.css"
 import { sendInquiry } from "../Util/emailHelper"
+import { validateInquiry } from "../Util/validation"
+import { ImSpinner9 } from "react-icons/im"
 
 function ContactForm() {
     const [name, setName] = useState("")
@@ -13,42 +15,70 @@ function ContactForm() {
     const [message, setMessage] = useState("")
     const [showForm, setshowForm] = useState(false)
     const [toast, setToast] = useState(null)
+    const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (loading) return;
+
+    const error = validateInquiry({
+        name,
+        phone,
+        projectType,
+        location,
+        message
+    });
+
+    if (error) {
+        setToast({
+            type: "error",
+            message: error
+        });
+
+        return;
+    }
+
+    try {
+        setLoading(true);
 
         const response = await sendInquiry({
             name,
             phone,
             projectType,
             location,
-            message
+            message,
+            time: new Date().toLocaleString()
         });
 
-        if (response.success){
+        if (response.success) {
             setToast({
                 type: "success",
                 message: "Inquiry submitted successfully!"
-            })
-
-            setTimeout(
-                () => {
-                    setToast(null)
-                }, 4000
-            )
-        }
-
-        else{
-            setToast({
-                type: "error",
-                message: "Failed to submit inquiry, Please try again."
             });
 
-            setTimeout(() => {
-                setToast(null)
-            }, 4000);
+            setshowForm(false);
+
+            // Optional: clear form
+        } else {
+            setToast({
+                type: "error",
+                message: "Failed to submit inquiry. Please try again."
+            });
         }
+    } catch {
+        setToast({
+            type: "error",
+            message: "Something went wrong. Please try again."
+        });
+    } finally {
+        setLoading(false);
+
+        setTimeout(() => {
+            setToast(null);
+        }, 4000);
     }
+}
     return (
         <>
         <button 
@@ -125,8 +155,12 @@ function ContactForm() {
         />
     </div>
 
-    <button className="submit-btn" type="button" onClick={handleSubmit}>
-        Request Consultation
+    <button className="submit-btn" type="button" 
+    disabled={loading}
+    onClick={handleSubmit}>
+        {
+            loading ? <ImSpinner9 className="spinner" />  : "Request Consultaion"
+        }
     </button>
     </div>
 

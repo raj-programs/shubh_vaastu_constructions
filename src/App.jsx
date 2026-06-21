@@ -5,7 +5,7 @@ import Home from './pages/home-page'
 import Projects from './pages/projects.jsx'
 import './App.css'
 import { useEffect } from 'react'
-import ProjectDetails from './pages/projectDetsil.jsx'
+import ProjectDetails from './pages/projectDetails.jsx'
 function App() {
 
   useEffect(() => {
