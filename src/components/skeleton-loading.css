@@ -1,0 +1,28 @@
+.skeleton-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skeleton-image {
+    height: 320px;
+    border-radius: 8px;
+    background: #eee;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-title {
+    width: 70%;
+    height: 24px;
+    border-radius: 4px;
+    background: #eee;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-location {
+    width: 40%;
+    height: 16px;
+    border-radius: 4px;
+    background: #eee;
+    animation: skeleton-loading 1.5s infinite;
+}

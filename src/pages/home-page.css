@@ -1,0 +1,198 @@
+/* ══════════════════════════════════════════════
+   HOME PAGE — Premium layout & hero
+   Palette: Navy #001f3f | Gold #c5a059 | Cream #f8f8f7
+   Fonts : Cormorant Garamond | Work Sans
+══════════════════════════════════════════════ */
+
+/* ── Section spacing token ──────────────────── */
+section {
+    padding: 80px 8%;
+}
+
+/* ── Hero ───────────────────────────────────── */
+#hero {
+    min-height: 92vh;
+    padding: 0;                          /* override section padding */
+
+    background-image: url("../assets/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;        /* subtle parallax */
+
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark overlay */
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 31, 63, 0.65) 0%,
+        rgba(0, 0, 0, 0.35) 100%
+    );
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero-section {
+    max-width: 680px;
+    margin-left: 8%;
+}
+
+/* Gold eyebrow line */
+.hero-section::before {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: #c5a059;
+    margin-bottom: 24px;
+}
+
+.hero-section h1 {
+    color: #fff;
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 700;
+    line-height: 1.08;
+    margin-bottom: 22px;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 0.02em;
+}
+
+.hero-section p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.1rem;
+    line-height: 1.85;
+    margin-bottom: 38px;
+    font-family: "Work Sans", sans-serif;
+    max-width: 520px;
+}
+
+/* ── CTA Buttons ────────────────────────────── */
+.act-btn {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    margin: 5px;
+    border: 2px solid #c5a059;
+    background: transparent;
+    color: #c5a059;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Fill sweep — behind the text (z-index: -1) */
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #c5a059;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    z-index: -1;           /* ← was 0, text was hidden underneath */
+}
+
+.btn:hover::before {
+    transform: scaleX(1);
+}
+
+.btn:hover {
+    color: #fff;           /* ← gold text flips to white over the fill */
+    border-color: #c5a059;
+}
+
+.btn-secondary {
+    border-color: rgba(248, 248, 247, 0.75);
+    color: #f8f8f7;
+}
+
+.btn-secondary::before {
+    background: #f8f8f7;   /* cream fill for the secondary variant */
+}
+
+.btn-secondary:hover {
+    color: #001f3f;        /* navy text over cream fill */
+    border-color: #f8f8f7;
+}
+
+/* ── Scroll hint ────────────────────────────── */
+#hero .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    animation: bounce 2s infinite;
+}
+
+#hero .scroll-hint span {
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#hero .scroll-hint::after {
+    content: "";
+    width: 1px;
+    height: 36px;
+    background: #c5a059;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+    section {
+        padding: 56px 5%;
+    }
+
+    .hero-section {
+        margin: 0 5%;
+    }
+
+    .hero-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .act-btn {
+        flex-direction: column;
+    }
+
+    .btn {
+        justify-content: center;
+    }
+}

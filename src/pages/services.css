@@ -1,0 +1,117 @@
+/* ══════════════════════════════════════════════
+   SERVICES SECTION
+   Scoped to #services to avoid global pollution
+══════════════════════════════════════════════ */
+
+#services h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: #001f3f;
+    margin-bottom: 6px;
+}
+
+#services h2::after {
+    content: "";
+    display: block;
+    width: 52px;
+    height: 3px;
+    background: #c5a059;
+    margin: 14px 0 24px;
+}
+
+#services > p {
+    font-family: "Work Sans", sans-serif;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+/* ── Grid ───────────────────────────────────── */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ── Card ───────────────────────────────────── */
+.service-card {
+    background: #fff;
+    border: 1px solid rgba(0, 31, 63, 0.08);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: default;
+}
+
+/* Animated gold bar that sweeps in from left */
+.service-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #c5a059;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.35s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleY(1);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 31, 63, 0.1);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+/* ── Icon ───────────────────────────────────── */
+.service-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #001f3f;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+/* Icon wrapper — gold circle */
+.service-card h3 svg {
+    font-size: 1.8rem;
+    color: #c5a059;
+    background: rgba(197, 160, 89, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+    box-sizing: content-box;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover h3 svg {
+    background: #c5a059;
+    color: #fff;
+}
+
+.service-card p {
+    font-family: "Work Sans", sans-serif;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

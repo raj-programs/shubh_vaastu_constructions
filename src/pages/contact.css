@@ -1,0 +1,15 @@
+
+.contact-title{
+    font-family: "Caramorant Garamond", serif;
+    color: #001f3f;
+
+}
+
+p{
+    font-family: "Work Sans", sans-serif;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    max-width: 760px;
+    margin-bottom: 16px;
+}

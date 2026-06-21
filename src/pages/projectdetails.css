@@ -1,0 +1,248 @@
+/* ──────────────────────────────────────────────
+   PROJECT DETAILS — Premium & Modern
+   Palette: Navy #001f3f | Gold #c5a059 | Cream #f8f8f7
+   Fonts : Cormorant Garamond (display) | Work Sans (body)
+────────────────────────────────────────────── */
+
+.project-details-page {
+    background-color: #f8f8f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Loading state -------------------------------- */
+.pd-loading {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: #f8f8f7;
+}
+
+.pd-loading__spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(197, 160, 89, 0.25);
+    border-top-color: #c5a059;
+    border-radius: 50%;
+    animation: pd-spin 0.9s linear infinite;
+}
+
+.pd-loading__text {
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+@keyframes pd-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Container ─────────────────────────────────*/
+.pd-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 5%;
+    flex: 1;
+    width: 100%;
+}
+
+/* ── Header ────────────────────────────────────*/
+.pd-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.pd-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c5a059;
+    text-decoration: none;
+    margin-bottom: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.pd-back-link:hover {
+    color: #001f3f;
+    transform: translateX(-4px);
+}
+
+.pd-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    color: #001f3f;
+    line-height: 1.1;
+    margin: 0 0 16px;
+}
+
+.pd-location {
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* ── Gallery (Swiper) ──────────────────────────*/
+.pd-gallery {
+    margin-bottom: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 31, 63, 0.08);
+}
+
+.pd-swiper {
+    width: 100%;
+    background: #0a0d14;
+    aspect-ratio: 16 / 9;
+}
+
+.pd-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pd-hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Swiper navigation overrides */
+.pd-swiper .swiper-button-next,
+.pd-swiper .swiper-button-prev {
+    color: #fff;
+    background: rgba(0, 31, 63, 0.4);
+    backdrop-filter: blur(4px);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.pd-swiper .swiper-button-next::after,
+.pd-swiper .swiper-button-prev::after {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.pd-swiper .swiper-button-next:hover,
+.pd-swiper .swiper-button-prev:hover {
+    background: #c5a059;
+    transform: scale(1.1);
+}
+
+.pd-swiper .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.pd-swiper .swiper-pagination-bullet-active {
+    background: #c5a059;
+    transform: scale(1.35);
+}
+
+/* ── Content Section ───────────────────────────*/
+.pd-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.pd-label {
+    display: block;
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c5a059;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    padding-bottom: 8px;
+}
+
+.pd-description p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin: 0;
+}
+
+.pd-meta {
+    background: #fff;
+    padding: 32px;
+    border: 1px solid rgba(0, 31, 63, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pd-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pd-meta-item .pd-label {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    color: #888;
+}
+
+.pd-value {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #001f3f;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 900px) {
+    .pd-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pd-container {
+        padding: 40px 5%;
+    }
+    
+    .pd-swiper {
+        aspect-ratio: 4 / 3;
+    }
+    
+    .pd-title {
+        font-size: 2.2rem;
+    }
+}
