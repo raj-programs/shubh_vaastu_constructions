@@ -4,6 +4,7 @@ import Services from "./services"
 import ProjectsMini from "./projects-mini"
 import Contact from "./contact"
 import Footer from "./footer"
+import Testinomial from "../components/testinomials"
 import "./home-page.css"
 import { useEffect } from "react"
 import { openWhatsApp } from "../Util/whatsAppHelper"
@@ -85,6 +86,8 @@ Location:`;
             <section id="projects">
                 <ProjectsMini />
             </section>
+
+            <Testinomial />
 
             <section id="contact">
                 <Contact />

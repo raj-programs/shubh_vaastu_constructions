@@ -1,0 +1,220 @@
+/* =========================
+   Testimonial Card
+========================= */
+
+.testinomial-content {
+    width: 100%;
+    max-width: 1050px;          /* Increased width */
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 42px 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+    height: auto;
+    min-height: 330px;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.testinomial-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2rem,4vw,3rem);
+    font-weight: 600;
+    color: #001f3f;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.project-name {
+    font-family: "Work Sans", sans-serif;
+    font-size: clamp(.95rem,2vw,1.1rem);
+    font-weight: 600;
+    color: #7b7b7b;
+    margin-bottom: 22px;
+    letter-spacing: .2px;
+}
+
+.rating {
+    display:flex;
+    align-items:center;
+    gap:4px;
+    margin-bottom:22px;
+}
+
+.star{
+    color:#f7b53a;
+    font-size:1.4rem;
+}
+
+.no-star{
+    color:#d9d9d9;
+}
+
+.testinomial-content p{
+    margin:0 0 22px;
+    font-family:"DM Sans",sans-serif;
+    font-size:clamp(.98rem,1.3vw,1.08rem);
+    line-height:1.75;
+    letter-spacing:.15px;
+    color:#444;
+    text-wrap:pretty;
+}
+
+.location{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#c5a059;
+    font-family:"DM Sans",sans-serif;
+    font-weight:500;
+}
+
+/* =========================
+   Swiper
+========================= */
+
+.testimonial-swiper{
+    padding-bottom:60px;
+}
+
+.testimonial-swiper .swiper-wrapper{
+    align-items:stretch;
+}
+
+.testimonial-swiper .swiper-slide{
+    display:flex;
+    height:auto !important;
+}
+
+.testimonial-swiper .swiper-slide>.testinomial-content{
+    flex:1;
+}
+
+.testimonial-swiper .swiper-pagination{
+    bottom:0 !important;
+}
+
+.testimonial-swiper .swiper-pagination-bullet{
+    width:10px;
+    height:10px;
+    background:#c89b3c !important;
+    opacity:.35 !important;
+    transition:.3s;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active{
+    width:28px;
+    border-radius:30px;
+    background:#001f3f !important;
+    opacity:1 !important;
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width:992px){
+
+    .testinomial-content{
+        max-width:100%;
+        padding:34px 30px;
+        min-height:auto;
+    }
+
+    .testinomial-title{
+        font-size:2.4rem;
+        line-height:1.08;
+    }
+
+    .project-name{
+        font-size:1rem;
+        margin-bottom:18px;
+    }
+
+    .rating{
+        margin-bottom:18px;
+    }
+
+    .star{
+        font-size:1.2rem;
+    }
+
+    .testinomial-content p{
+        font-size:.98rem;
+        line-height:1.65;
+        letter-spacing:.1px;
+    }
+
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width:768px){
+
+    .testinomial-content{
+        padding:24px 20px;
+        border-radius:12px;
+    }
+
+    .testinomial-title{
+        font-size:2rem;
+        line-height:1.08;
+    }
+
+    .project-name{
+        font-size:.92rem;
+        margin-bottom:16px;
+    }
+
+    .rating{
+        margin-bottom:14px;
+    }
+
+    .star{
+        font-size:1.05rem;
+    }
+
+    .testinomial-content p{
+        font-size:.93rem;
+        line-height:1.6;
+        letter-spacing:.05px;
+        text-align:left;
+    }
+
+    .location{
+        font-size:.9rem;
+    }
+
+}
+
+/* =========================
+   Small Phones
+========================= */
+
+@media (max-width:480px){
+
+    .testinomial-content{
+        padding:20px 16px;
+    }
+
+    .testinomial-title{
+        font-size:1.8rem;
+    }
+
+    .project-name{
+        font-size:.88rem;
+    }
+
+    .testinomial-content p{
+        font-size:.9rem;
+        line-height:1.55;
+    }
+
+    .location{
+        font-size:.85rem;
+    }
+
+}

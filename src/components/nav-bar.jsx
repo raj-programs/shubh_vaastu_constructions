@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RiCloseLargeFill } from "react-icons/ri";
-import logo from "../assets/logo.jpeg";
+import logo from "../assets/logo.webp";
 import "./nav-bar.css";
 
 function Navbar() {
@@ -70,6 +70,8 @@ function Navbar() {
             <button
                 className={`hamburger ${menuOpen ? "open" : ""}`}
                 onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={menuOpen}
             >
                 {menuOpen ? <RiCloseLargeFill /> : <RxHamburgerMenu />}
             </button>

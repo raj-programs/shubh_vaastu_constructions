@@ -3,16 +3,39 @@
 
 <head>
   <meta charset="UTF-8" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/src/assets/hero-image.webp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>frontend</title>
+  <meta name="description"
+  content="Shubh Vaastu Construction provides architectural planning, structural design, project management and construction services in Sangli, Miraj and Maharashtra." 
+  />
+  <meta property="og:title" content="Shubh Vaastu Construction" />
+<meta
+  property="og:description"
+  content="Architectural planning, structural design and construction services."
+/>
+<meta property="og:image" content="/og-image.jpg" />
+<meta property="og:type" content="website" />
+  <title>
+    Shubh Vaastu Constricution | Construction & Architectural Consultants firm in Sangli
+  </title>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Shubh Vaastu Construction",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sangli",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "India"
+  }
+}
+</script>
 </body>
 
 </html>

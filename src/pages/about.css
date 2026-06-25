@@ -72,6 +72,144 @@
     margin-bottom: 0;
 }
 
+
+.founder-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:4rem;
+    width:100%;
+    margin-top:3rem;
+}
+
+.founder-content{
+    flex:1;
+}
+
+.founder-content p{
+    font-size:1.1rem;
+    line-height:1.9;
+    color:#555;
+    margin:0;
+}
+
+.founder-profile{
+    width:320px;
+    flex-shrink:0;
+    text-align:center;
+}
+
+.Founder-img{
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid #c7a35a;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.15),
+        0 5px 15px rgba(0,0,0,0.08);
+    transition:all .4s ease;
+}
+
+.Founder-img:hover{
+    transform:translateY(-5px);
+}
+
+.founder-name{
+    margin-top:1.25rem;
+    font-size:1.8rem;
+    font-weight:600;
+    color:#222;
+}
+
+.founder-role{
+    margin-top:0.5rem;
+    font-size:1.1rem;
+    color:#c7a35a;
+    font-weight:500;
+}
+
+.founder-qualifications{
+    margin-top:1rem;
+    color:#666;
+    line-height:1.8;
+    font-size:0.95rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+
+    .founder-container{
+        gap:2.5rem;
+    }
+
+    .founder-profile{
+        width:280px;
+    }
+
+    .Founder-img{
+        width:240px;
+        height:240px;
+    }
+
+    .founder-content p{
+        font-size:1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+    .founder-container{
+        flex-direction:column;
+        text-align:center;
+        gap:2rem;
+    }
+
+    .founder-profile{
+        width:100%;
+        order:1; /* Image appears above text */
+    }
+
+    .Founder-img{
+        width:200px;
+        height:200px;
+    }
+
+    .founder-name{
+        font-size:1.5rem;
+    }
+
+    .founder-role{
+        font-size:1rem;
+    }
+
+    .founder-content p{
+        font-size:1rem;
+        line-height:1.8;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px){
+
+    .Founder-img{
+        width:170px;
+        height:170px;
+    }
+
+    .founder-name{
+        font-size:1.3rem;
+    }
+
+    .founder-content p{
+        font-size:0.95rem;
+    }
+
+    .founder-qualifications{
+        font-size:0.9rem;
+    }
+}
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 600px) {
     .grid {

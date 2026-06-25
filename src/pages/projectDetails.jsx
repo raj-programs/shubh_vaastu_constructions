@@ -26,7 +26,7 @@ function ProjectDetails() {
         return (
             <div className="pd-loading">
                 <div className="pd-loading__spinner" />
-                <span className="pd-loading__text">Loading project&hellip;</span>
+                <span className="pd-loading__text">Design | Build | Deliver&hellip;</span>
             </div>
         );
 
@@ -39,10 +39,12 @@ function ProjectDetails() {
                     <Link to="/projects-gallery" className="pd-back-link">
                         <FaArrowLeft /> Back to Projects
                     </Link>
+                    <div className="pd-hero">
                     <h1 className="pd-title">{project.name}</h1>
                     {project.location && (
                         <p className="pd-location">◈ {project.location}</p>
                     )}
+                    </div>
                 </div>
 
                 <div className="pd-gallery" data-aos="fade-up" data-aos-delay="200">

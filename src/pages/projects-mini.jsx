@@ -13,9 +13,17 @@ function ProjectsMini() {
 
   useEffect(() => {
     client
-      .fetch('*[_type == "project"][0...3]')
+      .fetch('*[_type == "project"][0...6]')
       .then((data) => {
-        setProjects(data)
+        const formattedimg = data.map(project => ({
+          ...project,
+          imgUrl: urlFor(project.mainImage)
+                  .width(600)
+                  .height(400)
+                  .quality(80)
+                  .url()
+        }));
+        setProjects(formattedimg)
         setLoading(false)
         AOS.refresh()
       })
@@ -50,10 +58,10 @@ function ProjectsMini() {
               className="project-card"
               key={project._id}
               data-aos="fade-up"
-              data-aos-delay={index * 120}
+              data-aos-delay={index * 75}
             >
               <img
-                src={urlFor(project.mainImage).url()}
+                src={project.imgUrl}
                 alt={project.name}
                 loading="lazy"
                 decoding="async"

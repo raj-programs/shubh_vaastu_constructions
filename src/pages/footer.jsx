@@ -1,12 +1,12 @@
-import Logo from "../assets/logo.jpeg"
+import Logo from "../assets/logo.webp"
 import { IoLocationOutline } from "react-icons/io5"
 import { FaInstagram } from "react-icons/fa"
-import { FaFacebookSquare } from "react-icons/fa"
 import { FaWhatsapp } from "react-icons/fa"
 import { IoCallOutline } from "react-icons/io5"
 import { MdOutlineEmail } from "react-icons/md"
 import "./footer.css"
 import { openWhatsApp } from "../Util/whatsAppHelper"
+
 
 function Footer() {
         const consultationMessage =
@@ -41,7 +41,7 @@ Location:`;
 
                     <div className="contact-row">
                         <span className="contact-icon"><MdOutlineEmail /></span>
-                        <span>shubhvaastu</span>
+                        <span>shubhvaastu02@gmail.com</span>
                     </div>
 
                     <div className="contact-row">
@@ -62,9 +62,6 @@ Location:`;
                     rel="noreferrer"
                     >
                         <FaInstagram /> Instagram
-                    </a>
-                    <a href="">
-                        <FaFacebookSquare /> Facebook
                     </a>
                     <a href="#"
                     onClick={(e) => {

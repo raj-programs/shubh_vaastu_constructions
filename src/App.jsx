@@ -2,10 +2,12 @@ import { Route, Routes } from 'react-router-dom'
 import AOS from "aos"
 import "aos/dist/aos.css"
 import Home from './pages/home-page'
-import Projects from './pages/projects.jsx'
 import './App.css'
-import { useEffect } from 'react'
-import ProjectDetails from './pages/projectDetails.jsx'
+import { useEffect, lazy, Suspense } from 'react'
+
+const Projects = lazy(() => import("./pages/projects.jsx"))
+const ProjectDetails = lazy(() => import("./pages/projectDetails.jsx"))
+
 function App() {
 
   useEffect(() => {
@@ -18,11 +20,13 @@ function App() {
 
   return (
     <>
+    <Suspense fallback={<div></div>}>
       <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/projects-gallery' element={<Projects />} />
       <Route path='/projects/:slug' element={<ProjectDetails />}></Route>
       </Routes>
+      </Suspense>
     </>
   )
 }

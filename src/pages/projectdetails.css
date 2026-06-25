@@ -78,6 +78,13 @@
     transform: translateX(-4px);
 }
 
+.pd-hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
 .pd-title {
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -94,9 +101,9 @@
     text-transform: uppercase;
     color: #555;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    gap: 8px;
+    align-items: center;
 }
 
 /* ── Gallery (Swiper) ──────────────────────────*/
@@ -124,7 +131,7 @@
 .pd-hero__img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     display: block;
 }
 

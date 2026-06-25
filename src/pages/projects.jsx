@@ -64,6 +64,17 @@ function Projects() {
 
                 <a
                     href="#"
+                    className={`nav-l ${active === "industrial" ? "active" : ""}`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setActive("industrial")
+                    }}
+                >
+                    INDUSTRIAL
+                </a>
+
+                <a
+                    href="#"
                     className={`nav-l ${active === "interior" ? "active" : ""}`}
                     onClick={(e) => {
                         e.preventDefault();
@@ -83,8 +94,9 @@ function Projects() {
                     RENOVATION & REMODELING
                 </a>
 
-            </nav>
-            <h2>Masterpiece Projects</h2>
+            </nav> <br />
+            <span className="section-eyebrow">The Colection</span>
+            <h2 className="section-title">Masterpiece Projects</h2>
 
             <section>
                 <div className="project-grid">
