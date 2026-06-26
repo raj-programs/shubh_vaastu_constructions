@@ -22,8 +22,12 @@ function Testinomial() {
   }, []);
 
   return (
-  
-    <div className="testinomial-container">
+    <>
+    <span className="section-eyebrow" data-aos="fade-in">People's Word</span>
+    <h2 className="section-title" data-aos="fade-in">Testinomials</h2>
+
+    <div className="testinomial-container" data-aos="fade-in">
+
 <Swiper
   className="testimonial-swiper"
   modules={[Autoplay, Pagination]}
@@ -107,6 +111,8 @@ function Testinomial() {
     ))}
   </Swiper>
 </div>
+
+</>
     
   );
 }

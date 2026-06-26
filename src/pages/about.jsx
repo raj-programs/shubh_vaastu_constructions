@@ -32,8 +32,8 @@ Over the years, we have successfully delivered a diverse range of residential, c
 </p>
 </div>
 </div><br />
-<span className="section-eyebrow">The Founder's Corner</span>
-<h2 className="section-title">Meet Our Founder</h2>
+<span className="section-eyebrow" data-aos="fade-left">The Founder's Corner</span>
+<h2 className="section-title" data-aos="fade-left">Meet Our Founder</h2>
 
 <div class="founder-container">
 
