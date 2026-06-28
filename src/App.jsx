@@ -4,6 +4,7 @@ import "aos/dist/aos.css"
 import Home from './pages/home-page'
 import './App.css'
 import { useEffect, lazy, Suspense } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 const Projects = lazy(() => import("./pages/projects.jsx"))
 const ProjectDetails = lazy(() => import("./pages/projectDetails.jsx"))
@@ -27,6 +28,7 @@ function App() {
       <Route path='/projects/:slug' element={<ProjectDetails />}></Route>
       </Routes>
       </Suspense>
+      <Analytics />
     </>
   )
 }

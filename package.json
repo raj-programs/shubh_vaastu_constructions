@@ -17,6 +17,7 @@
     "@fontsource/work-sans": "^5.2.8",
     "@sanity/client": "^7.22.1",
     "@sanity/image-url": "^2.1.1",
+    "@vercel/analytics": "^2.0.1",
     "aos": "^2.3.4",
     "emailjs": "^5.0.1",
     "react": "^19.2.6",
